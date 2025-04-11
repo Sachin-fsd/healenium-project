@@ -34,35 +34,28 @@ Before you get started, ensure you have the following installed on your system:
 ## 🚀 Getting Started
 
 Follow these simple steps to get your self-healing automation environment up and running:
-You should have `docker` installed on your system.
 
-1. **Clone the Repository (if applicable):**
+1.  **Clone the Repository (if applicable):**
     ```bash
-    git clone https://github.com/Sachin-fsd/healenium-project.git
+    git clone https://github.com/Sachin-fsd/healeium-project.git
     cd healenium-project
     ```
 
-2. **Pull Images for docker, eg: pull selenoid image:**
-   Navigate to the directory containing your `docker-compose.yml` file and run:
-    ```bash
-    docker pull selenoid/vnc:chrome_102.0
-    ```
-
-3. **Start the Docker Compose Stack:**
+2.  **Start the Docker Compose Stack:**
     Navigate to the directory containing your `docker-compose.yml` file and run:
     ```bash
+    docker pull selenoid/vnc:chrome_102.0
     docker-compose up -d
     ```
-    This command will download the necessary Docker images and start all the Healenium and Selenium components in detached mode.  
+    This command will download the necessary Docker images and start all the Healenium and Selenium components in detached mode.
 
-
-4. **Access the Healenium Report UI:**
+3.  **Access the Healenium Report UI:**
     Once the containers are running, you can access the Healenium reporting interface in your web browser at:
     ```
     http://localhost:7878/healenium/report/
     ```
 
-5. **Integrate Healenium into Your Selenium Tests (optional):**
+4.  **Integrate Healenium into Your Selenium Tests:**
     Add the Healenium dependency to your project's `pom.xml` (Maven) or `build.gradle` (Gradle):
 
     **Maven (`pom.xml`):**
@@ -78,7 +71,7 @@ You should have `docker` installed on your system.
     implementation 'com.epam.healenium:healenium-web:LATEST_VERSION' // Replace with the latest Healenium version
     ```
 
-6. **Wrap Your WebDriver with `SelfHealingDriver` (optional):**
+5.  **Wrap Your WebDriver with `SelfHealingDriver`:**
     In your test code, instantiate your WebDriver as usual (e.g., `ChromeDriver`) and then wrap it with `SelfHealingDriver`:
 
     ```java
@@ -100,11 +93,10 @@ You should have `docker` installed on your system.
     }
     ```
 
-7. **Run Your Tests:**
+6.  **Run Your Tests:**
     Execute your Selenium tests as you normally would. Healenium will automatically intercept WebDriver commands and attempt to heal failing locators.
 
-
-8. **Monitor Healing Reports:**
+7.  **Monitor Healing Reports:**
     After your tests have run, visit the Healenium Report UI (`http://localhost:7878/healenium/report/`) to view any healing events, selector information, and overall test execution details.
 
 ## ⚙️ Configuration
@@ -156,4 +148,3 @@ We welcome contributions to this project! If you have suggestions, bug reports, 
 ---
 
 **🚀 Level up your automation game with Healenium! 🛡️**
-Happy Coding
