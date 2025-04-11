@@ -48,12 +48,15 @@ Follow these simple steps to get your self-healing automation environment up and
     docker-compose up -d
     ```
     This command will download the necessary Docker images and start all the Healenium and Selenium components in detached mode.
-
+    _(See the Docker setup in action)_
+    ![Docker Compose Setup](https://github.com/Sachin-fsd/all-images/blob/main/Screenshot%202025-04-11%20195206.png?raw=true)
 3.  **Access the Healenium Report UI:**
     Once the containers are running, you can access the Healenium reporting interface in your web browser at:
     ```
     http://localhost:7878/healenium/report/
     ```
+    _(A glimpse of the Healenium Report page)_
+    ![Healenium Report Page](https://github.com/Sachin-fsd/all-images/blob/main/Screenshot%202025-04-11%20195513.png?raw=true)
 
 4.  **Integrate Healenium into Your Selenium Tests:**
     Add the Healenium dependency to your project's `pom.xml` (Maven) or `build.gradle` (Gradle):
@@ -65,6 +68,8 @@ Follow these simple steps to get your self-healing automation environment up and
         <artifactId>healenium-web</artifactId>
         <version>LATEST_VERSION</version> </dependency>
     ```
+    _(Healenium dependency in `pom.xml`)_
+    ![Maven POM Configuration](https://github.com/Sachin-fsd/all-images/blob/main/Screenshot%202025-04-11%20195136.png?raw=true)
 
     **Gradle (`build.gradle`):**
     ```gradle
@@ -92,12 +97,19 @@ Follow these simple steps to get your self-healing automation environment up and
         }
     }
     ```
+    _(Example of a Healenium test case)_
+    ![Healenium Test Case](https://github.com/Sachin-fsd/all-images/blob/main/Screenshot%202025-04-11%20195154.png?raw=true)
 
 6.  **Run Your Tests:**
     Execute your Selenium tests as you normally would. Healenium will automatically intercept WebDriver commands and attempt to heal failing locators.
 
 7.  **Monitor Healing Reports:**
     After your tests have run, visit the Healenium Report UI (`http://localhost:7878/healenium/report/`) to view any healing events, selector information, and overall test execution details.
+    _(Example of a Changing the id in real Time)_
+    ![Healenium Report](https://github.com/Sachin-fsd/all-images/blob/main/Screenshot%202025-04-11%20195358.png?raw=true)
+
+    _(Showing test case healed perfectly)_
+    ![Healenium Report](https://github.com/Sachin-fsd/all-images/blob/main/Screenshot%202025-04-11%20195440.png?raw=true)
 
 ## ⚙️ Configuration
 
